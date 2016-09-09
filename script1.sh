@@ -1,15 +1,20 @@
 #!/bin/bash
 
-#This script converts temperature from farhrenheit degree to celsuis degree.
+#This script converts temperature from farhrenheit degree to both celsuis and kelvin degree.
 
+
+
+ 
+function celsuis-kelvin { 
 echo " Enter value of temperature in fahrenheit "
 
   read F
 
- 
-function celsuis { 
   echo " Temerature in fahrenheit equals  "  
-   echo " scale=3 ; (((( $F-32 ))*5/9 )) " |bc  
+   echo " scale=3 ; (((( $F-32 ))*5/9 )) " |bc
+ echo " Temerature in kelvin  equals  "
+   echo " scale=3 ; (((( $F+459.67 ))*5/9 )) " |bc
+  
   
 
 
@@ -18,4 +23,4 @@ function celsuis {
 return 
 }
 
-celsuis
+celsuis-kelvin
